@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="add-item--section">
+    <input 
+      [(ngModel)]="itemName"
+      type="text" 
+      placeholder="Enter a item"
+      class="add-item--input"
+      (keydown)="addItem($event)"
+    >
+    <button class="add-button" 
+      (click)="addItem()"
+    >
+      Add Item
+    </button>
+  </div>
+
+  <div class="stages-section">
+    @for(stage of stages; track stage){
+      <app-stage [stageName]="stage" [stageItems]="getItemsByStage(stage)" />
+    }
+  </div>
+</div>

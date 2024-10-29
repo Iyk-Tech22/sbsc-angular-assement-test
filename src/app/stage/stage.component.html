@@ -1,0 +1,14 @@
+<div class="stage">
+    <h2>{{stageName()}}</h2>
+    <ul>
+        @for(item of stageItems(); track item.id){
+            <li
+                (click)="handleClick(item)"
+                class="item"
+            >
+                {{ item.name }}
+                <span (click)="removeItem($event, item)">&times;</span>
+            </li>
+        }
+    </ul>
+</div>
